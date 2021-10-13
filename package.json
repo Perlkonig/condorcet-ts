@@ -1,0 +1,46 @@
+{
+  "name": "condorcet",
+  "version": "0.1.0",
+  "description": "TypeScript library implementing various Condorcet voting algorithms",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "npm run build-ts && npm run tslint",
+    "build-ts": "tsc",
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "dist-dev": "webpack",
+    "dist-prod": "webpack --mode=production",
+    "json2ts": "npx json2ts -i src/schema.json -o src/schema.d.ts",
+    "full-dev": "npm run test && npm run build && npm run dist-dev",
+    "full-prod": "npm run test && npm run build && npm run dist-prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Perlkonig/condorcet-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "condorcet",
+    "voting",
+    "ranking"
+  ],
+  "author": "Aaron Dalton <aaron@daltons.ca> (https://www.perlkonig.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Perlkonig/condorcet-ts/issues"
+  },
+  "homepage": "https://github.com/Perlkonig/condorcet-ts#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.3.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.4",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0"
+  }
+}
